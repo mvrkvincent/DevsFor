@@ -24,7 +24,8 @@ const Home = () => {
 
       <main>
         <div className="grid">
-          <div className='title'><code>DevsFor_</code></div>
+          <div className='title'><code>DevsFor</code><code style={{ color: '#ff66ff' }}>_</code></div>
+          
           {/* <form className="title" onSubmit={handleSubmit}>
             <input
               type="text" 
@@ -33,10 +34,11 @@ const Home = () => {
               onChange={handleChange}></input>
           </form> */}
         </div>
+        <div className="card">Summer 2020</div>
       </main>
 
       <footer>
-        <div>Designed & Built by <a href="https://markvincent.dev">Mark Vincent</a> in Brooklyn, NY | &copy; 2020</div>
+        <div>Designed and Built by DevsFor in NYC | &copy; 2020</div>
       </footer>
 
       <style jsx>{`
@@ -104,13 +106,12 @@ const Home = () => {
         .card {
           margin: 1rem;
           flex-basis: 45%;
-          padding: 1.5rem;
+          padding: 1rem;
           text-align: left;
           color: inherit;
           text-decoration: none;
           border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
+          border-radius: 0.4rem;
         }
 
         form {
@@ -120,11 +121,7 @@ const Home = () => {
         input {
           border: none;
           width: 10rem;
-          // border: 1px solid #eaeaea;
-          // border-radius: 0.4rem;
-          // padding: 1rem;
           font-size: 4rem;
-          // text-align: center;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
