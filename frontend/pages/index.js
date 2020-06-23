@@ -97,7 +97,7 @@ const Home = () => {
 
         input {
           border: 1px solid #eaeaea;
-          font-size: 4rem;
+          font-size: 3rem;
           border-radius: 0.74rem;
           padding: 1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
