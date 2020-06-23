@@ -63,6 +63,7 @@ const Home = () => {
           font-size: 0.85rem;
           border-top: 1px solid #eaeaea;
           align-items: center;
+          justify-content: center;
           padding: 0 2rem;
         }
 
