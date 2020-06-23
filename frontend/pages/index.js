@@ -3,7 +3,13 @@ import Head from 'next/head';
 
 const Home = () => {
   const [search, setSearch] = useState('');
-  const [display, setDisplay] = useState('');
+  const [display, setDisplay] = useState('_');
+
+
+  const format = () => {
+    let terms = search.replace(/(?:^|\s|["'([{])+\S/g, term => term.toUpperCase());
+    return (terms === '') ? '_' : terms.split(' ').join('');
+  };
 
   const handleChange = e => {
     e.preventDefault();
@@ -12,7 +18,7 @@ const Home = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setDisplay(search);
+    setDisplay(format());
   };
 
   return (
@@ -23,7 +29,7 @@ const Home = () => {
       </Head>
 
       <main>
-        <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>_</code></code>
+        <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>{display}</code></code>
         <form className="title" onSubmit={handleSubmit}>
           <input
             type="text" 
