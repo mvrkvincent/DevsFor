@@ -19,22 +19,19 @@ const Home = () => {
     <div className="container">
       <Head>
         <title>DevsFor</title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <div className="grid">
-          <div className='title'><code>DevsFor</code><code style={{ color: '#ff66ff' }}>_</code></div>
-          
-          {/* <form className="title" onSubmit={handleSubmit}>
-            <input
-              type="text" 
-              value={search}
-              placeholder="_"
-              onChange={handleChange}></input>
-          </form> */}
-        </div>
-        <div className="card">Summer 2020</div>
+        <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>_</code></code>
+        <form className="title" onSubmit={handleSubmit}>
+          <input
+            type="text" 
+            value={search}
+            placeholder="Search..."
+            onChange={handleChange}></input>
+        </form>
+        <div></div>
       </main>
 
       <footer>
@@ -44,20 +41,17 @@ const Home = () => {
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
         main {
-          padding: 5rem 0;
+          padding: 2rem 2rem;
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          justify-content: space-between;
+          // justify-content: center;
           width: 100%;
         }
 
@@ -68,10 +62,8 @@ const Home = () => {
           height: 4rem;
           font-size: 0.85rem;
           border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
           align-items: center;
-          text-align: center;
+          padding: 0 2rem;
         }
 
         footer a {
@@ -96,32 +88,17 @@ const Home = () => {
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
-        .grid {
-          width: 80%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 0.4rem;
-        }
-
         form {
+          display: flex;
+          justify-content: center;
           margin: 2rem;
         }
 
         input {
-          border: none;
-          width: 10rem;
+          border: 1px solid #eaeaea;
           font-size: 4rem;
+          border-radius: 0.74rem;
+          padding: 1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
@@ -150,6 +127,21 @@ const Home = () => {
 
         * {
           box-sizing: border-box;
+        }
+
+        ::placeholder { 
+          color: #eaeaea;
+          opacity: 1; 
+        }
+
+        :-ms-input-placeholder { 
+          color: #eaeaea;
+        }
+
+        ::-ms-input-placeholder { 
+          color: #eaeaea;
+        }
+
         }
       `}</style>
     </div>
