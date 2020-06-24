@@ -31,12 +31,11 @@ const Home = () => {
       <Head>
         <title>DevsFor</title>
         <link rel="icon" href="/favicon.ico" />
-        <script src="https://kit.fontawesome.com/d341ef76ec.js" crossOrigin="anonymous" />
       </Head>
 
       <main>
         <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>{display}</code></code>
-        <form className="title" onSubmit={handleSubmit}>
+        <form className="search" onSubmit={handleSubmit}>
           <input
             style={theme.search}
             type="text" 
@@ -150,7 +149,6 @@ const Home = () => {
         form {
           display: flex;
           justify-content: center;
-          margin: 2rem;
         }
 
         input {
@@ -168,12 +166,71 @@ const Home = () => {
           border-color: red;
         }
 
-        @media (max-width: 600px) {
-          .grid {
+        @media (max-width: 800px) {
+          main {
             width: 100%;
-            flex-direction: column;
+            padding: 0.5rem;
           }
+
+          .title {
+            font-size: 3.5rem;
+            margin-top: 2rem;
+          }
+
+          form {
+            margin: 6rem 0;
+          }
+
+          input {
+            font-size: 1.5rem;
+            width: 90%;
+          }
+
+          .info {
+            font-size: 1.5rem;
+            margin: 2rem;
+            padding: 0;
+          }
+
+          .info p {
+            margin: 0;
+          }
+
+          footer {
+            width: 100%;
+            flex-direction: column-reverse;
+            padding: 1rem 2rem;
+          }
+
+          .left {
+            width: 90%;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+          }
+
+          p {
+            padding: 0.5rem 0;
+          }
+
+          .tools {
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+          }
+
+          .toggle{
+            margin-top: 1rem;
+          }
+
+          .copy {                  
+            text-align: center;
+            align-items: center;   
+          }
+
         }
+
       `}</style>
 
       <style jsx global>{`
