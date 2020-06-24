@@ -102,17 +102,15 @@ const Home = () => {
         }
 
         .left {
-          height: 100%;
+          width: 90%;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
           padding: 0 2rem;
         }
 
         .copy {              
           display: flex;
           flex-direction: column;
-          justify-content: center;
         }
 
         .copy p {
@@ -175,6 +173,7 @@ const Home = () => {
           }
 
           .title {
+            text-align: center;
             font-size: 3.5rem;
             margin-top: 2rem;
           }
