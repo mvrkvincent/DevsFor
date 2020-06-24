@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { dark, light } from '../templates/themes';
+import Contact from '../components/contact';
 
 const Home = () => {
   const [search, setSearch] = useState('');
   const [display, setDisplay] = useState('_');
+  const [darkMode, setDarkMode] = useState(false);
+
+  const theme = darkMode ? dark : light;
 
 
   const format = () => {
@@ -22,16 +27,18 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={theme}>
       <Head>
         <title>DevsFor</title>
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://kit.fontawesome.com/d341ef76ec.js" crossOrigin="anonymous" />
       </Head>
 
       <main>
         <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>{display}</code></code>
         <form className="title" onSubmit={handleSubmit}>
           <input
+            style={theme.search}
             type="text" 
             value={search}
             placeholder="Search..."
@@ -40,8 +47,26 @@ const Home = () => {
         <div></div>
       </main>
 
-      <footer>
-        <div>Designed and Built by DevsFor in NYC | &copy; 2020</div>
+      <footer style={theme.footer}>
+
+        <div className='left'>
+
+          <div className="copy">
+
+            <p>DevsFor is a collective of software engineers providing full stack development and design services free of charge to charitable organizations, small businessess, non-profits, and activist groups. Send us a message for more information.</p>
+            <p>Designed & Built by DevsFor in NYC | &copy; 2020</p>
+
+            <p
+              style={{ cursor: 'pointer' }} onClick={() => setDarkMode(!darkMode)}>Lights: {darkMode ? <i className="fas fa-toggle-off" /> : <i className="fas fa-toggle-on" />}
+            </p>
+
+          </div>
+
+        </div>
+
+        <Contact theme={theme} />
+
+
       </footer>
 
       <style jsx>{`
@@ -49,6 +74,7 @@ const Home = () => {
           min-height: 100vh;
           display: flex;
           flex-direction: column;
+          transition: all 0.5s ease;
         }
 
         main {
@@ -57,27 +83,53 @@ const Home = () => {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          // justify-content: center;
           width: 100%;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
         }
 
         footer {
+          width: 100%;
           display: flex;
           flex-direction: row;
-          width: 100%;
-          height: 4rem;
-          font-size: 0.85rem;
-          border-top: 1px solid #eaeaea;
           align-items: center;
-          justify-content: center;
+          align-content: center;
+          justify-content: space-between;
+          padding: 1rem 5rem;
+          transition: all 0.5s ease;
+        }
+
+        .left {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
           padding: 0 2rem;
         }
 
-        footer a {
-          text-decoration: none;
-          font-size: inherit;
-          color: #696969;
-          transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        .copy {              
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .copy p {
+          line-height: 1.5rem;
+        }
+
+        .tools {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 4rem;
+          margin: 1rem 0;
+        }
+
+        .tools i {
+          margin-right: 1rem;
         }
 
         footer a:hover {
@@ -102,16 +154,18 @@ const Home = () => {
         }
 
         input {
-          border: 1px solid #eaeaea;
+          border: 1px solid;
           font-size: 3rem;
           border-radius: 0.74rem;
           padding: 1rem;
+          color: inherit;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
         input:focus {
           outline: none;
+          border-color: red;
         }
 
         @media (max-width: 600px) {
@@ -130,6 +184,7 @@ const Home = () => {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          background: ${theme.background};
         }
 
         * {
@@ -137,16 +192,16 @@ const Home = () => {
         }
 
         ::placeholder { 
-          color: #eaeaea;
+          color: ${theme.placeholder};
           opacity: 1; 
         }
 
         :-ms-input-placeholder { 
-          color: #eaeaea;
+          color: ${theme.placeholder};
         }
 
         ::-ms-input-placeholder { 
-          color: #eaeaea;
+          color: ${theme.placeholder};
         }
 
         }
