@@ -159,6 +159,8 @@ const Home = () => {
           color: inherit;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+          background-color: transparent;
+            -webkit-appearance: none;
         }
 
         input:focus {
