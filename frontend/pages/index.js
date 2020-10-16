@@ -34,7 +34,13 @@ const Home = () => {
       </Head>
 
       <main>
-        <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>{display}</code></code>
+        <div className="header"> 
+          <code className="title">> DevsFor<code style={{color: '#ff66ff'}}>{display}</code></code>
+          <div className="links"> 
+            <a>I'm a Developer</a>
+            <a>I'm an Organization</a>
+          </div>
+        </div>
         <form className="search" onSubmit={handleSubmit}>
           <input
             style={theme.search}
@@ -43,7 +49,7 @@ const Home = () => {
             placeholder="Search..."
             onChange={handleChange}></input>
         </form>
-        <div></div>
+        <div>Organizations will appear here!</div>
       </main>
 
       <footer style={theme.footer}>
@@ -88,6 +94,18 @@ const Home = () => {
         a {
           color: inherit;
           text-decoration: none;
+        }
+
+        .header {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .links a {
+          margin-left: 2rem;
         }
 
         footer {
